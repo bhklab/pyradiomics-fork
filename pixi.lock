@@ -2141,7 +2141,7 @@ packages:
   name: pyradiomics
   version: 3.1.1
   path: .
-  sha256: a36a2412ec7e512455dc8578ce1122b55c129ac1c8a92cd729056b9d2e75491e
+  sha256: a681bc263ade0bc5c91a33b733a173f6c08e25851106de65d38a88771c32d90a
   requires_dist:
   - numpy
   - simpleitk
