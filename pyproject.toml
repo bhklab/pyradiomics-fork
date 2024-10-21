@@ -45,3 +45,63 @@ pyradiomics = "radiomics.scripts.__init__:parse_args"
 "Documentation" = "https://pyradiomics.readthedocs.io/en/latest/index.html"
 "Docker" = "https://hub.docker.com/r/radiomics/pyradiomics/"
 "Github" = "https://github.com/AIM-Harvard/pyradiomics"
+
+[project.optional-dependencies]
+build = [ "build>=1.2.2.post1,<2", "twine>=5.1.1,<6"]
+
+[tool.pixi.project]
+channels = ["conda-forge"]
+platforms = ["osx-arm64"]
+
+
+[tool.pixi.build-dependencies]
+numpy = ">=1.9.2"
+
+[tool.pixi.pypi-dependencies]
+pyradiomics = { path = ".", editable = true }
+
+[tool.pixi.tasks]
+
+[tool.pixi.environments]
+dev = {features = ["test"]}
+build = {features = ["build"]}
+py310 = ["py310", "test"]
+py311 = ["py311", "test"]
+py312 = ["py312", "test"]
+py313 = ["py313", "test"]
+
+############################################## python ###############################################
+
+[tool.pixi.feature.py310.dependencies]
+python = "3.10.*"
+[tool.pixi.feature.py311.dependencies]
+python = "3.11.*"
+[tool.pixi.feature.py312.dependencies]
+python = "3.12.*"
+[tool.pixi.feature.py313.dependencies]
+python = "3.13.*"
+
+############################################## TEST ################################################
+
+
+[tool.pixi.feature.test.dependencies]
+pytest = "*"
+pytest-cov = "*"
+pytest-xdist = "*"
+ipykernel = ">=6.29.3,<6.30"
+
+[tool.pixi.feature.test.tasks]
+test = "pytest -n auto --cov=radiomics --cov-report=xml --cov-report=term-missing"
+
+[tool.pixi.feature.build.dependencies]
+wheel = ">=0.29.0"
+numpy = ">=1.9.2"
+setuptools= ">=38.6.0"
+simpleitk = "*"
+
+
+# pytest
+# flake8
+# flake8-import-order
+# sphinx>=1.4
+# sphinx_rtd_theme>=0.2.2
