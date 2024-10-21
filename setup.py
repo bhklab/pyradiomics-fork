@@ -12,7 +12,6 @@ if platform.architecture()[0].startswith('32'):
 
 commands = versioneer.get_cmdclass()
 incDirs = [sysconfig.get_paths()['include'], numpy.get_include()]
-print(f"{incDirs=}")
 ext = [Extension("radiomics._cmatrices", ["radiomics/src/_cmatrices.c", "radiomics/src/cmatrices.c"],
                  include_dirs=incDirs),
        Extension("radiomics._cshape", ["radiomics/src/_cshape.c", "radiomics/src/cshape.c"],
