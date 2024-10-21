@@ -1,7 +1,7 @@
 
 [project]
 name = "pyradiomics"
-version = "3.1.2"
+version = "3.1.3"
 authors = [
     { name = "PyRadiomics Community", email = "pyradiomics@googlegroups.com"}
 ]
