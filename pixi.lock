@@ -2139,9 +2139,9 @@ packages:
   - ruamel-yaml>=0.16.0
 - kind: pypi
   name: pyradiomics
-  version: 3.1.1
+  version: 3.1.2
   path: .
-  sha256: a681bc263ade0bc5c91a33b733a173f6c08e25851106de65d38a88771c32d90a
+  sha256: b329d702ca5d94ca3899105a0effc03a42ff6703bb3206469e3dbe98b6d69958
   requires_dist:
   - numpy
   - simpleitk
